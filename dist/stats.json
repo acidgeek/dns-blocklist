@@ -1,6 +1,6 @@
 {
   "rules_block": 251115,
-  "rules_exception": 151,
+  "rules_exception": 150,
   "core_domains": 143686,
   "reference_domains": 190418,
   "estimated_dnslibs_mib_with_reference": 6.74,
@@ -268,7 +268,7 @@
     "Our exceptions": {
       "status": "ok",
       "block": 0,
-      "allow": 256
+      "allow": 255
     },
     "Pi-hole community whitelist (anudeepND)": {
       "status": "ok",

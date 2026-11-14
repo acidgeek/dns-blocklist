@@ -2,9 +2,9 @@
 ! Description: Companion to AdGuard's built-in DNS filter: HaGeZi Pro + Pi-hole community lists (StevenBlack, Firebog ticked) + curated in-app ad SDKs, de-duplicated against the built-in filter and sized for AdGuard for iOS (8 MiB DNS filter budget), with exceptions so banking, chat, KYC and payments keep working.
 ! Homepage: https://github.com/acidgeek/dns-blocklist
 ! Expires: 12 hours
-! Version: 2026.11.14.0336
-! Last modified: 2026-11-14T03:36:11+00:00
-! Block rules: 251115 | Exceptions: 151
+! Version: 2026.11.14.0337
+! Last modified: 2026-11-14T03:37:19+00:00
+! Block rules: 251115 | Exceptions: 150
 !
 ! ---- Exceptions (keep apps working) ----
 @@||api.ads.tvb.com^
@@ -120,7 +120,6 @@
 @@|pntra.com^
 @@|pntrac.com^
 @@|pntrack.com^
-@@|pubads.g.doubleclick.net^
 @@|qksrv.net^
 @@|redirect.at^
 @@|redirect.viglink.com^
