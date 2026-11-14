@@ -53,8 +53,26 @@ app de farmacia que decía "sin conexión".
 ### Decisiones
 
 - Se **confía en HaGeZi Pro** cuando es la que bloquea (p. ej. `tnc0-*.tiktokv.com`, `ocular.*`).
-- `pubads.g.doubleclick.net` quedó **permitido provisionalmente** (algunas apps de streaming no
-  reproducen sin él), pero la captura mostró que Tumblr, una app de metro y una de ofertas lo usan
-  para anuncios. Pendiente decidir con datos de reproducción de video (ver `PENDIENTES.md`).
+- `pubads.g.doubleclick.net` **ya no se permite**: la captura mostró que varias apps (red social de
+  blogs, app de metro, app de ofertas) lo usan para anuncios, y la app de streaming con anuncios
+  reproduce desde su propio CDN sin tocarlo. Si un video se atora, la primera prueba es exceptuar
+  `pubads.g.doubleclick.net` o `imasdk.googleapis.com`.
 - Servidor DNS upstream: **AdGuard DNS non-filtered (id 30)**, para que el filtrado sea solo local y
   nuestras excepciones manden.
+
+### Verificación manual (con la grabación activa, sin filtrado)
+
+- **Chat de la app bancaria**: es LivePerson. `lptag.liveperson.net` lo bloquean StevenBlack (la
+  lista por defecto de Pi-hole), AdAway, anudeepND adservers y hostsVN; `lpsnmedia.net`, anudeepND y
+  Prigent-Ads. **Causa confirmada de la rotura pasada.** Con `allow.txt` el chat pasa completo.
+- **App de farmacia (Flutter)**: API, buscador (empathy.co), imágenes y backend en S3 pasan. Comprueba
+  conectividad con `www.google.com` y `www.apple.com` (este último se agregó a `protect-hosts.txt`).
+  Solo se bloquea analítica.
+- **Streaming con anuncios**: el video y el DRM salen de su CDN propio; no usa `pubads` ni `dai`.
+- **Servidor de medios**: se entra por IP de la red local, así que el filtrado DNS no lo afecta.
+
+### Publicación
+
+- Repositorio público creado y primera ejecución de GitHub Actions en verde (pruebas, compilación,
+  revisión y publicación). La lista responde en la URL de `raw.githubusercontent.com`.
+- Los archivos de asistente y el grafo local se excluyen con `.git/info/exclude` (no se publican).

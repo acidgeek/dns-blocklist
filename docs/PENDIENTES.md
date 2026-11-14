@@ -4,7 +4,7 @@ Marca con `[x]` lo terminado y anota la fecha. Lo más urgente arriba.
 
 ## Para dejarlo funcionando
 
-- [ ] **Publicar el repositorio** en GitHub (`acidgeek/dns-blocklist`, público: AdGuard necesita
+- [x] (2026-11-13) **Publicar el repositorio** en GitHub (`acidgeek/dns-blocklist`, público: AdGuard necesita
       descargar la lista sin credenciales) y confirmar que el primer GitHub Actions termina en verde.
 - [ ] **Importar en AdGuard** con el enlace que imprime `python3 tools/adguard_import_link.py`: filtro integrado + esta lista
       + servidor 30 (non-filtered). Confirmar en la pantalla de importación.
@@ -22,11 +22,11 @@ Marca con `[x]` lo terminado y anota la fecha. Lo más urgente arriba.
 
 ## Verificación
 
-- [ ] Pruebas manuales con captura: chat de la app bancaria, app de farmacia (carrito/compra), acceso
-      al servidor de medios, apps con más anuncios, **reproducir video** en la app de streaming con
-      anuncios (para decidir `pubads`).
-- [ ] **Decidir `pubads.g.doubleclick.net`**: si la app de streaming no lo usa para reproducir,
-      quitarlo de `allow.txt` (hoy deja pasar anuncios en varias apps).
+- [x] (2026-11-13) Pruebas manuales con captura: chat bancario, farmacia, servidor de medios,
+      apps con anuncios, reproducción de video. Resultados en `HISTORIAL.md`.
+- [x] (2026-11-13) **`pubads.g.doubleclick.net`**: se quitó de `allow.txt`.
+- [ ] Con AdGuard encendido, **reproducir un video** en la app de streaming con anuncios: si se atora,
+      exceptuar `imasdk.googleapis.com` (lo bloquea HaGeZi Pro).
 - [ ] Volver a grabar con AdGuard **encendido** y confirmar: anuncios bloqueados, ninguna app rota.
 - [ ] Revisar AdGuard → Actividad unos días; cualquier bloqueo raro → `allow.txt`.
 

@@ -240,7 +240,9 @@
 !
 ! ---- Video streaming with server-side inserted ads (blocking breaks playback entirely) ----
 @@|dai.google.com^
-@@|pubads.g.doubleclick.net^
+! pubads.g.doubleclick.net is NOT allowed: captures showed it serving ads in several apps and the
+! streaming app tested plays from its own CDN. If a video app hangs, try @@|pubads.g.doubleclick.net^
+! or @@|imasdk.googleapis.com^ first.
 !
 ! ---- Logins that lists sometimes catch ----
 @@|graph.facebook.com^
