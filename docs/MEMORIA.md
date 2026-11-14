@@ -31,6 +31,24 @@ https://raw.githubusercontent.com/acidgeek/dns-blocklist/main/dist/adguard-dns.t
 | Con DnsLibs 2.10.1 (la que usa AdGuard iOS 4.5.x) el modo de bloqueo "Default" responde `0.0.0.0`/`::` (antes de 2.10.0 era REFUSED). | `DnsLibs/CHANGELOG.md`, `project.pbxproj` | No hace falta cambiar el modo de bloqueo. |
 | AdGuard usa una VPN local con "conectar bajo demanda", pero **iOS solo permite una VPN activa**. Si otra VPN (p. ej. una VPN para entrar a la red de casa) toma el control, AdGuard queda apagado y no vuelve solo. | `VpnManager.swift`, `NetworkSettingsService.swift` | Usar Atajos para alternar VPN; ver `PENDIENTES.md`. |
 
+## Convivir con otras VPN (iOS permite una sola)
+
+Verificado en el iPhone el 2026-11-13:
+
+- La acción de Atajos **"Configurar VPN → Conectar"** sí controla VPN de apps (AdGuard y la VPN del
+  servidor). Cambiar de una a otra tarda 3–6 s; mientras la otra está activa **no hay filtrado**.
+- Patrón usado: automatización "al abrir la app que necesita la otra VPN → conectarla" y "al cerrarla →
+  conectar AdGuard"; para una página web, un atajo: conectar VPN → esperar 2 s → "Mostrar vista web" →
+  conectar AdGuard (la última acción corre al cerrar la vista con la X).
+- "Al cerrar la app" se dispara en cuanto la app deja la pantalla (inicio o cambio de app); no hace falta
+  forzar el cierre. Riesgo: cortar reproducción en segundo plano/PiP (sin probar).
+- Si el atajo se interrumpe a mitad (p. ej. se abre otra app con la vista web abierta, o la primera vez que
+  pide permiso para abrir la URL), la otra VPN queda seleccionada y **AdGuard apagado**. Recuperar:
+  Configuración → VPN → AdGuard. Comprobar en Configuración → VPN cuál está seleccionada y si dice "Conectado".
+- No usar la "integración" de AdGuard VPN: necesita el túnel dividido de AdGuard, que es eludible.
+- Para VPN de uso ocasional sin automatización segura (cortaría la VPN al cambiar de app): volver a AdGuard
+  a mano al terminar.
+
 ## Diseño de la lista
 
 - **Tier 0**: `lists/block-mobile-ads.txt` (SDKs de anuncios en apps, curada a mano).
@@ -74,3 +92,19 @@ Requiere `pymobiledevice3` (venv de pipx), iPhone por USB, Modo de Desarrollador
    Ojo: varias apps Flutter se llaman `Runner`; se separan por la hora en que se abrieron.
 
 Lo ideal es grabar **sin** filtrado (AdGuard apagado) para ver todo lo que las apps intentan contactar.
+Para comprobar el filtrado, grabar **con** AdGuard y buscar conexiones (SNI/QUIC) a dominios bloqueados y
+consultas DNS por la interfaz celular (`pdp_ip`): ambas deben ser 0. En túnel completo las apps siguen
+apareciendo con su propio nombre de proceso.
+
+### Manejar la pantalla del iPhone desde la Mac (cuando el dueño lo pide)
+
+- Capturas: `developer core-device screen-capture screenshot --native`. Llegan con unos segundos de
+  retraso: esperar y tomar otra antes de concluir.
+- Toques: `developer core-device universal-hid-service session --native` leyendo líneas `tap X Y`
+  (coordenadas 0..65535). Muchos `tap` sueltos seguidos saturan el canal y dejan de funcionar; el primer
+  toque tras una captura a veces se pierde.
+- Texto: `type` solo escribe minúsculas/ASCII sin Mayús y con teclado español (`-`→`'`, `/` y `:` fallan).
+  Para texto exacto: `developer core-device copy --native` (portapapeles del iPhone) y pegar.
+- Estado de VPN sin tocar la pantalla: `developer core-device list-processes --native` y buscar
+  `Tunnel.appex` (AdGuard) o la extensión de la otra VPN.
+- Nunca tocar cerca de "Restablecer", "Eliminar perfil VPN" o los "−" del modo edición de iconos.
