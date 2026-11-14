@@ -1,0 +1,157 @@
+! Curated in-app advertising SDK / ad-network domains (AdGuard DNS syntax).
+! Only ad-serving infrastructure. Nothing here is needed for an app to work.
+! ||domain^ blocks the domain and all of its subdomains.
+!
+! ---- Google AdMob / Ad Manager / AdSense ----
+||googleads.g.doubleclick.net^
+||googleads4.g.doubleclick.net^
+||securepubads.g.doubleclick.net^
+||ad.doubleclick.net^
+||static.doubleclick.net^
+||cm.g.doubleclick.net^
+||stats.g.doubleclick.net^
+||pagead2.googlesyndication.com^
+||tpc.googlesyndication.com^
+||googlesyndication.com^
+||googleadservices.com^
+||adservice.google.com^
+||mobileads.google.com^
+||admob.com^
+||googletagservices.com^
+||fundingchoicesmessages.google.com^
+!
+! ---- AppLovin / MAX / SafeDK ----
+||applovin.com^
+||applvn.com^
+||safedk.com^
+||applovin-ads.com^
+!
+! ---- Unity Ads / ironSource (LevelPlay) ----
+||unityads.unity3d.com^
+||unityads.unitychina.cn^
+||supersonicads.com^
+||ironsrc.mobi^
+||ironsrc.com^
+||ironsrc.net^
+||ironbeast.io^
+!
+! ---- Mintegral ----
+||rayjump.com^
+||mintegral.net^
+||mintegral.com^
+||mtgglobals.com^
+!
+! ---- Pangle (ByteDance ad network, not TikTok itself) ----
+||pangle.io^
+||pangleglobal.com^
+||pangle-ads.com^
+!
+! ---- Vungle / Liftoff ----
+||vungle.com^
+||liftoff.io^
+||liftoff-creatives.io^
+!
+! ---- InMobi ----
+||inmobi.com^
+||inmobicdn.net^
+||inmobi.cn^
+!
+! ---- Chartboost / AdColony / Digital Turbine (Fyber) ----
+||chartboost.com^
+||adcolony.com^
+||inner-active.mobi^
+||fyber.com^
+||tapjoy.com^
+||tapjoyads.com^
+!
+! ---- Meta Audience Network (in-app ads only; Facebook login keeps working) ----
+||an.facebook.com^
+!
+! ---- Amazon Publisher Services ----
+||amazon-adsystem.com^
+!
+! ---- Other mobile ad networks / mediation ----
+||adsmoloco.com^
+||moloco.com^
+||bidmachine.io^
+||smaato.net^
+||smaato.com^
+||presage.io^
+||ogury.co^
+||ogury.io^
+||pubnative.net^
+||hyprmx.com^
+||startappservice.com^
+||startapp.com^
+||tappx.com^
+||appodeal.com^
+||appodealx.com^
+||admost.com^
+||mopub.com^
+||mobfox.com^
+||loopme.me^
+||loopme.com^
+||smartyads.com^
+||adsmovil.com^
+||yandexadexchange.net^
+||adsdk.yandex.ru^
+||an.yandex.ru^
+||ad.mail.ru^
+||kidoz.net^
+||madvertise.com^
+||mngads.com^
+||adtiming.com^
+||ads.yahoo.com^
+||adtech.yahooinc.com^
+!
+! ---- Programmatic exchanges (banner/video ads inside apps and webviews) ----
+||adnxs.com^
+||adnxs-simple.com^
+||pubmatic.com^
+||rubiconproject.com^
+||openx.net^
+||casalemedia.com^
+||3lift.com^
+||lijit.com^
+||adsrvr.org^
+||smartadserver.com^
+||sascdn.com^
+||teads.tv^
+||yieldmo.com^
+||sharethrough.com^
+||gumgum.com^
+||adform.net^
+||bidswitch.net^
+||contextweb.com^
+||improvedigital.com^
+||33across.com^
+||sonobi.com^
+||spotxchange.com^
+||spotx.tv^
+||springserve.com^
+||tremorhub.com^
+||vidoomy.com^
+||seedtag.com^
+||criteo.com^
+||criteo.net^
+||taboola.com^
+||taboolasyndication.com^
+||outbrain.com^
+||outbrainimg.com^
+||media.net^
+||admixer.net^
+||adsafeprotected.com^
+||moatads.com^
+||doubleverify.com^
+||adroll.com^
+||quantserve.com^
+||rlcdn.com^
+||demdex.net^
+||bluekai.com^
+||krxd.net^
+||serving-sys.com^
+||flashtalking.com^
+||innovid.com^
+!
+! ---- Apple Search Ads in App Store / News (not needed for downloads) ----
+||iadsdk.apple.com^

@@ -1,0 +1,284 @@
+{
+  "rules_block": 251115,
+  "rules_exception": 151,
+  "core_domains": 143686,
+  "reference_domains": 190418,
+  "estimated_dnslibs_mib_with_reference": 6.74,
+  "pihole_candidates": 326583,
+  "cap": 260000,
+  "cap_reached_at_votes": 1,
+  "psl_dropped": [
+    "0emm.com",
+    "16-b.it",
+    "1cooldns.com",
+    "32-b.it",
+    "3utilities.com",
+    "4u.com",
+    "64-b.it",
+    "abrdns.com",
+    "at-band-camp.net",
+    "biz.ua",
+    "bumbleshrimp.com",
+    "camdvr.org",
+    "ccwu.cc",
+    "cf-ipfs.com",
+    "cloudflare-ipfs.com",
+    "co.tz",
+    "com.cn",
+    "cprapid.com",
+    "dfirma.pl",
+    "dkonto.pl",
+    "dnsking.ch",
+    "dnsup.net",
+    "dyndns-at-home.com",
+    "dyndns-work.com",
+    "dynserv.org",
+    "dynuddns.net",
+    "ewp.live",
+    "fastvps-server.com",
+    "for-some.biz",
+    "for-the.biz",
+    "forumz.info",
+    "freeddns.us",
+    "from-ak.com",
+    "from-al.com",
+    "from-az.net",
+    "from-co.net",
+    "from-ga.com",
+    "from-hi.com",
+    "from-ia.com",
+    "from-me.org",
+    "from-mn.com",
+    "from-mo.com",
+    "from-nd.com",
+    "from-nv.com",
+    "from-ok.com",
+    "from-or.com",
+    "from-sd.com",
+    "from-wv.com",
+    "groks-the.info",
+    "hicam.net",
+    "iamallama.com",
+    "indevs.in",
+    "is-a-chef.net",
+    "is-a-conservative.com",
+    "is-a-democrat.com",
+    "is-a-designer.com",
+    "is-a-financialadvisor.com",
+    "is-a-knight.org",
+    "is-a-socialist.com",
+    "is-a-soxfan.org",
+    "is-a-therapist.com",
+    "is-an-anarchist.com",
+    "is-found.org",
+    "is-slick.com",
+    "is-very-good.org",
+    "ju.mp",
+    "live-website.com",
+    "mcdir.me",
+    "misconfused.org",
+    "mochausercontent.com",
+    "myiphost.com",
+    "mypi.co",
+    "mysecuritycamera.org",
+    "nflfan.org",
+    "now-dns.net",
+    "now-dns.org",
+    "ntdll.top",
+    "on-fleek.app",
+    "onthewifi.com",
+    "ownip.net",
+    "pisz.pl",
+    "redirectme.net",
+    "ru.com",
+    "saves-the-whales.com",
+    "sells-it.net",
+    "servebbs.net",
+    "servebbs.org",
+    "serveblog.net",
+    "serveftp.com",
+    "servesarcasm.com",
+    "soundcast.me",
+    "tcp4.me",
+    "theworkpc.com",
+    "tunk.org",
+    "vpndns.net",
+    "webhop.me",
+    "webhop.net",
+    "workers.dev"
+  ],
+  "psl_dropped_count": 98,
+  "auto_unblocked_protected_hosts": [],
+  "must_block_not_blocked": [],
+  "protected_still_blocked": [],
+  "sources": {
+    "Curated in-app ad SDKs": {
+      "status": "ok",
+      "block": 128,
+      "allow": 0
+    },
+    "AdGuard DNS filter (built into the app, not repeated here)": {
+      "status": "ok",
+      "block": 190418,
+      "allow": 11
+    },
+    "AdGuard Mobile Ads filter": {
+      "status": "ok",
+      "block": 927,
+      "allow": 1
+    },
+    "HaGeZi Multi PRO": {
+      "status": "ok",
+      "block": 226838,
+      "allow": 0
+    },
+    "HaGeZi Apple native trackers": {
+      "status": "ok",
+      "block": 104,
+      "allow": 0
+    },
+    "StevenBlack Unified (Pi-hole default)": {
+      "status": "ok",
+      "block": 77308,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt": {
+      "status": "ok",
+      "block": 44276,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts": {
+      "status": "ok",
+      "block": 57,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://v.firebog.net/hosts/static/w3kbl.txt": {
+      "status": "ok",
+      "block": 351,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://adaway.org/hosts.txt": {
+      "status": "ok",
+      "block": 6540,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://v.firebog.net/hosts/AdguardDNS.txt": {
+      "status": "ok",
+      "block": 190478,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://v.firebog.net/hosts/Admiral.txt": {
+      "status": "ok",
+      "block": 1653,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/anudeepND/blacklist/master/adservers.txt": {
+      "status": "ok",
+      "block": 42358,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://v.firebog.net/hosts/Easylist.txt": {
+      "status": "ok",
+      "block": 51631,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext": {
+      "status": "ok",
+      "block": 3561,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts": {
+      "status": "ok",
+      "block": 9,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts": {
+      "status": "ok",
+      "block": 18607,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://v.firebog.net/hosts/Easyprivacy.txt": {
+      "status": "ok",
+      "block": 43263,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://v.firebog.net/hosts/Prigent-Ads.txt": {
+      "status": "ok",
+      "block": 4269,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.2o7Net/hosts": {
+      "status": "ok",
+      "block": 2030,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt": {
+      "status": "ok",
+      "block": 347,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt": {
+      "status": "ok",
+      "block": 4922,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt": {
+      "status": "ok",
+      "block": 11687,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://v.firebog.net/hosts/Prigent-Crypto.txt": {
+      "status": "ok",
+      "block": 11490,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Risk/hosts": {
+      "status": "ok",
+      "block": 2189,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://phishing.army/download/phishing_army_blocklist_extended.txt": {
+      "status": "ok",
+      "block": 145877,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt": {
+      "status": "ok",
+      "block": 125,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt": {
+      "status": "ok",
+      "block": 8140,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/AssoEchap/stalkerware-indicators/master/generated/hosts": {
+      "status": "ok",
+      "block": 929,
+      "allow": 0
+    },
+    "Firebog ticked (Pi-hole): https://urlhaus.abuse.ch/downloads/hostfile/": {
+      "status": "missing"
+    },
+    "Firebog ticked (Pi-hole): https://lists.cyberhost.uk/malware.txt": {
+      "status": "ok",
+      "block": 100052,
+      "allow": 0
+    },
+    "Our exceptions": {
+      "status": "ok",
+      "block": 0,
+      "allow": 256
+    },
+    "Pi-hole community whitelist (anudeepND)": {
+      "status": "ok",
+      "block": 0,
+      "allow": 191
+    },
+    "Pi-hole referral/affiliate whitelist (anudeepND)": {
+      "status": "ok",
+      "block": 0,
+      "allow": 76
+    }
+  }
+}

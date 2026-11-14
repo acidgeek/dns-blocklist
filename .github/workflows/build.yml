@@ -1,0 +1,82 @@
+name: Build blocklist
+
+on:
+  schedule:
+    - cron: "17 9 * * *" # every day, 03:17 Mexico City
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "lists/**"
+      - "scripts/**"
+      - "tests/**"
+      - "sources.json"
+      - ".github/workflows/build.yml"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: build-blocklist
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+
+      # build.py exits non-zero (and writes nothing) if a core source fails, the
+      # size moves abnormally or a protected host would stay blocked, so the
+      # previously published list stays online.
+      - name: Build list
+        run: python scripts/build.py
+
+      # Open an issue when the build needed to protect something or lost an ad domain.
+      # The body is generated into a file (never interpolated into the shell).
+      - name: Report items that need a human
+        run: python scripts/attention.py dist/stats.json > attention.md || true
+
+      - name: Open attention issue
+        run: |
+          if [ -s attention.md ]; then
+            title="Revisar lista: cambios que requieren atención"
+            if ! gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number' | grep -q .; then
+              gh issue create --title "$title" --body-file attention.md --label "atención" || \
+              gh issue create --title "$title" --body-file attention.md
+            fi
+          fi
+
+      - name: Publish if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          rules=$(grep -m1 -o 'Block rules: [0-9]*' dist/adguard-dns.txt | grep -o '[0-9]*')
+          git commit -m "Update list: ${rules} rules ($(date -u +%F))"
+          git push
+
+      - name: Open issue on failure
+        if: failure()
+        run: |
+          title="La compilación diaria falló"
+          if ! gh issue list --state open --search "in:title \"$title\"" --json number --jq '.[0].number' | grep -q .; then
+            printf 'La compilación falló y se mantuvo publicada la lista anterior.\n\nRegistro: %s/%s/actions/runs/%s\n' \
+              "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > failure.md
+            gh issue create --title "$title" --body-file failure.md
+          fi

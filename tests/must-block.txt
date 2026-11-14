@@ -1,0 +1,23 @@
+# Ad-serving hosts that the final list must block (sanity check, reported in stats).
+googleads.g.doubleclick.net
+pagead2.googlesyndication.com
+tpc.googlesyndication.com
+d.applovin.com
+ms.applovin.com
+rt.applovin.com
+auction.unityads.unity3d.com
+config.unityads.unity3d.com
+outcome-ssp.supersonicads.com
+init.supersonicads.com
+analytics.rayjump.com
+api16-access-sg.pangle.io
+ads.api.vungle.com
+api.w.inmobi.com
+live.chartboost.com
+an.facebook.com
+aax.amazon-adsystem.com
+bidder.criteo.com
+cdn.taboola.com
+widgets.outbrain.com
+ib.adnxs.com
+app-measurement.com

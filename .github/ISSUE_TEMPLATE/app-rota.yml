@@ -1,0 +1,28 @@
+name: Una app dejó de funcionar
+description: Algo falla y sospechas del bloqueo DNS
+title: "[Rota] "
+labels: ["rota"]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: App
+      placeholder: "Nombre de la app"
+    validations:
+      required: true
+  - type: textarea
+    id: que
+    attributes:
+      label: ¿Qué falla?
+      placeholder: "Ej.: el chat no carga, dice sin conexión, no deja pagar"
+    validations:
+      required: true
+  - type: input
+    id: cuando
+    attributes:
+      label: ¿Cuándo? (fecha y hora aproximada)
+  - type: textarea
+    id: actividad
+    attributes:
+      label: Dominios bloqueados en AdGuard → Actividad (opcional)
+      description: Filtra por la app y copia los dominios marcados como bloqueados alrededor de esa hora.

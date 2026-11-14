@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+# captures from a phone never go in the repo
+*.jsonl
+*.pcap
+# personal notes and phone reports stay on this Mac
+private/

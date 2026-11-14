@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "DNS Blocklist iOS (ads + telemetry, app-safe)",
+    "description": "Companion to AdGuard's built-in DNS filter: HaGeZi Pro + Pi-hole community lists (StevenBlack, Firebog ticked) + curated in-app ad SDKs, de-duplicated against the built-in filter and sized for AdGuard for iOS (8 MiB DNS filter budget), with exceptions so banking, chat, KYC and payments keep working.",
+    "homepage": "https://github.com/acidgeek/dns-blocklist"
+  },
+  "max_rules": 260000,
+  "public_suffix_list": "https://publicsuffix.org/list/public_suffix_list.dat",
+  "sources": [
+    {
+      "name": "Curated in-app ad SDKs",
+      "path": "lists/block-mobile-ads.txt",
+      "format": "adblock",
+      "tier": 0
+    },
+    {
+      "name": "AdGuard DNS filter (built into the app, not repeated here)",
+      "url": "https://filters.adtidy.org/dns/filter_1_ios.txt",
+      "format": "adblock",
+      "role": "reference",
+      "import_exceptions": true
+    },
+    {
+      "name": "AdGuard Mobile Ads filter",
+      "url": "https://filters.adtidy.org/extension/chromium/filters/11.txt",
+      "format": "adblock",
+      "tier": 1,
+      "modifiers": []
+    },
+    {
+      "name": "HaGeZi Multi PRO",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt",
+      "format": "adblock",
+      "tier": 1
+    },
+    {
+      "name": "HaGeZi Apple native trackers",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.apple.txt",
+      "format": "adblock",
+      "tier": 1
+    },
+    {
+      "name": "StevenBlack Unified (Pi-hole default)",
+      "url": "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
+      "format": "hosts",
+      "tier": 2,
+      "required": false,
+      "weight": 2
+    },
+    {
+      "name": "Firebog ticked (Pi-hole)",
+      "index": "https://v.firebog.net/hosts/lists.php?type=tick",
+      "tier": 2,
+      "priority_patterns": [
+        "adaway",
+        "AdguardDNS",
+        "Admiral",
+        "adservers",
+        "Easylist",
+        "yoyo.org",
+        "UncheckyAds",
+        "hostsVN",
+        "Easyprivacy",
+        "Prigent-Ads",
+        "2o7Net",
+        "WindowsSpyBlocker",
+        "firstparty-trackers"
+      ],
+      "priority_weight": 2
+    },
+    {
+      "name": "Our exceptions",
+      "path": "lists/allow.txt",
+      "format": "allow-adblock",
+      "role": "allow"
+    },
+    {
+      "name": "Pi-hole community whitelist (anudeepND)",
+      "url": "https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt",
+      "format": "allow-domains",
+      "role": "allow",
+      "required": false
+    },
+    {
+      "name": "Pi-hole referral/affiliate whitelist (anudeepND)",
+      "url": "https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/referral-sites.txt",
+      "format": "allow-domains",
+      "role": "allow",
+      "required": false
+    }
+  ]
+}

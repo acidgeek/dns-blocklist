@@ -1,0 +1,79 @@
+# Hosts that must ALWAYS resolve. If any upstream list starts blocking one of
+# these, the build adds an exact exception automatically (and reports it).
+#
+# ---- iOS system ----
+captive.apple.com
+init.itunes.apple.com
+bag.itunes.apple.com
+buy.itunes.apple.com
+play.itunes.apple.com
+apps.apple.com
+amp-api.apps.apple.com
+appleid.apple.com
+idmsa.apple.com
+gsa.apple.com
+gs.apple.com
+albert.apple.com
+humb.apple.com
+static.ips.apple.com
+ppq.apple.com
+mesu.apple.com
+gdmf.apple.com
+time.apple.com
+ocsp.apple.com
+ocsp2.apple.com
+valid.apple.com
+crl.apple.com
+configuration.apple.com
+gateway.icloud.com
+setup.icloud.com
+keyvalueservice.icloud.com
+mask.icloud.com
+mask-h2.icloud.com
+api.apple-cloudkit.com
+weather-data.apple.com
+gspe1-ssl.ls.apple.com
+# ---- Google / Firebase essentials ----
+www.google.com
+www.gstatic.com
+fonts.gstatic.com
+fonts.googleapis.com
+www.googleapis.com
+accounts.google.com
+oauth2.googleapis.com
+securetoken.googleapis.com
+identitytoolkit.googleapis.com
+firebaseinstallations.googleapis.com
+firebaseremoteconfig.googleapis.com
+firebaseremoteconfigrealtime.googleapis.com
+firebasestorage.googleapis.com
+firestore.googleapis.com
+fcm.googleapis.com
+fcmtoken.googleapis.com
+firebaseappcheck.googleapis.com
+maps.googleapis.com
+maps.gstatic.com
+storage.googleapis.com
+www.recaptcha.net
+connectivitycheck.gstatic.com
+clients3.google.com
+www.apple.com
+# ---- connectivity checks used by Flutter / React Native apps ----
+one.one.one.one
+icanhazip.com
+api.ipify.org
+api64.ipify.org
+# ---- Meta logins / messaging ----
+graph.facebook.com
+b-graph.facebook.com
+graph.instagram.com
+i.instagram.com
+edge-chat.facebook.com
+edge-mqtt.facebook.com
+mqtt-mini.facebook.com
+# ---- Microsoft ----
+login.live.com
+login.microsoftonline.com
+# ---- Spotify ----
+spclient.wg.spotify.com
+apresolve.spotify.com
