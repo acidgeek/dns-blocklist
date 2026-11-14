@@ -89,3 +89,19 @@ app de farmacia que decía "sin conexión".
   bloqueados**, desapareció el banner y la app siguió funcionando.
 - El ajuste "Asistencia Wi-Fi" no aparece en Configuración con el operador de esta línea (eSIM de un
   operador virtual), así que no se puede desactivar por ahí; el túnel completo lo vuelve innecesario.
+
+### VPN del servidor de medios: Atajos probados
+
+- La VPN del servidor ya tenía "VPN On Demand" apagado (solo se conecta a mano).
+- Creadas con el asistente de Atajos de iOS 27 (y revisadas en el editor):
+  1. Automatización "Al abrir la app de streaming → Configurar VPN: conectar" (corre sola, sin aviso).
+  2. Automatización "Al cerrarla → Configurar VPN: conectar AdGuard".
+  3. Atajo en la pantalla de inicio: conectar esa VPN → esperar 2 s → mostrar la página del servidor →
+     conectar AdGuard al cerrar la página.
+- Prueba de punta a punta (procesos de túnel cada 3 s): cada paso cambió la VPN en menos de 6 s; la página y
+  la biblioteca cargaron; al cerrar volvió AdGuard. La primera ejecución del atajo pide permiso para abrir
+  la IP del servidor (se concedió). Prueba de fugas posterior: 0.
+- Lección: si se interrumpe el atajo a mitad (p. ej. abriendo otra app antes de cerrar la página), queda la
+  otra VPN seleccionada y AdGuard apagado. Se recupera con Configuración → VPN → AdGuard.
+- Automatización de la UI: `universal-hid-service session` (un solo canal) en lugar de muchos `tap`
+  sueltos; el primer toque tras una captura de pantalla a veces se pierde; las capturas llegan con retraso.

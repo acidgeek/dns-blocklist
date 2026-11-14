@@ -12,13 +12,15 @@ Marca con `[x]` lo terminado y anota la fecha. Lo más urgente arriba.
       nativa no aplica filtros locales).
 - [x] (2026-11-13) En AdGuard → Filtros DNS: **desactivar otras listas grandes** que hubiera (cada una suma al tope
       de 8 MiB y si se pasa, se pierden reglas en silencio). Dejar solo el filtro integrado y esta.
-- [ ] **VPN del servidor de medios**: desactivar su "VPN On Demand" y crear los Atajos (detalles en `private/CONTEXTO.md`):
-  - [ ] Automatización "Al abrir la app de streaming del servidor → Conectar esa VPN".
-  - [ ] Automatización "Al cerrarla → Conectar VPN de AdGuard".
-  - [ ] Reemplazar el acceso web del servidor de medios por un Atajo: Conectar esa VPN → Mostrar
+- [x] (2026-11-13) **VPN del servidor de medios**: su "VPN On Demand" ya estaba apagado; Atajos creados y probados (detalles en `private/CONTEXTO.md`):
+  - [x] Automatización "Al abrir la app de streaming del servidor → Conectar esa VPN".
+  - [x] Automatización "Al cerrarla → Conectar VPN de AdGuard".
+  - [x] Atajo en la pantalla de inicio: Conectar esa VPN → Esperar 2 s → Mostrar
         página web (URL del servidor) → Conectar VPN de AdGuard (al cerrar la página, AdGuard vuelve).
-- [ ] Otra app de VPN gratuita instalada: también desplaza a AdGuard y muestra anuncios propios;
-      considerar desinstalarla.
+- [ ] Otra app de VPN gratuita instalada (uso ocasional): mientras está activa no hay filtrado (iOS = una
+      sola VPN). Al terminar, volver a AdGuard (abrir AdGuard y tocar el interruptor, o Configuración → VPN →
+      AdGuard). No usar la "integración" de AdGuard VPN: exige túnel dividido, que se puede eludir.
+- [ ] Opcional: mover el atajo del servidor a su carpeta y borrar la app web anterior (esa no cambia la VPN).
 
 - [x] (2026-11-13) AdGuard → **Modo túnel = Túnel completo** (con dividido, iOS esquivaba el filtro por
       la red celular). Si se reinstala AdGuard o se restablece la configuración, **volver a ponerlo**.
