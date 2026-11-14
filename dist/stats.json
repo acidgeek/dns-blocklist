@@ -4,7 +4,7 @@
   "core_domains": 143686,
   "reference_domains": 190418,
   "estimated_dnslibs_mib_with_reference": 6.74,
-  "pihole_candidates": 326583,
+  "pihole_candidates": 326498,
   "cap": 260000,
   "cap_reached_at_votes": 1,
   "psl_dropped": [
@@ -239,7 +239,7 @@
     },
     "Firebog ticked (Pi-hole): https://phishing.army/download/phishing_army_blocklist_extended.txt": {
       "status": "ok",
-      "block": 145877,
+      "block": 145567,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt": {
