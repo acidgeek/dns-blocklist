@@ -76,3 +76,16 @@ app de farmacia que decía "sin conexión".
 - Repositorio público creado y primera ejecución de GitHub Actions en verde (pruebas, compilación,
   revisión y publicación). La lista responde en la URL de `raw.githubusercontent.com`.
 - Los archivos de asistente y el grafo local se excluyen con `.git/info/exclude` (no se publican).
+
+### Importación en AdGuard y la fuga que faltaba
+
+- Importado con `adguard://apply_settings`: quedaron exactamente 2 filtros DNS (integrado + esta lista,
+  442 606 reglas ≈ 6.75 MiB) y el servidor 30 (non-filtered). El túnel salió a `unfiltered.adguard-dns.com`.
+- **La prueba con AdGuard encendido mostró que los anuncios seguían cargando.** Causa: modo
+  "Túnel dividido". Cada conexión a un dominio bloqueado fallaba por Wi-Fi y iOS la reintentaba por
+  celular con el DNS del operador (10.x), fuera del túnel. 26 de 36 consultas por celular eran
+  dominios bloqueados. No era la lista ni el modo de bloqueo (DnsLibs 2.10.1 ya responde `0.0.0.0`).
+- Se cambió a **"Túnel completo"**. Repetida la prueba con la app de metro: **0 conexiones a dominios
+  bloqueados**, desapareció el banner y la app siguió funcionando.
+- El ajuste "Asistencia Wi-Fi" no aparece en Configuración con el operador de esta línea (eSIM de un
+  operador virtual), así que no se puede desactivar por ahí; el túnel completo lo vuelve innecesario.

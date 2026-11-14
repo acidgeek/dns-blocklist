@@ -6,11 +6,11 @@ Marca con `[x]` lo terminado y anota la fecha. Lo más urgente arriba.
 
 - [x] (2026-11-13) **Publicar el repositorio** en GitHub (`acidgeek/dns-blocklist`, público: AdGuard necesita
       descargar la lista sin credenciales) y confirmar que el primer GitHub Actions termina en verde.
-- [ ] **Importar en AdGuard** con el enlace que imprime `python3 tools/adguard_import_link.py`: filtro integrado + esta lista
+- [x] (2026-11-13) **Importar en AdGuard** con el enlace que imprime `python3 tools/adguard_import_link.py`: filtro integrado + esta lista
       + servidor 30 (non-filtered). Confirmar en la pantalla de importación.
-- [ ] En AdGuard → Protección DNS: verificar que **Implementación DNS = AdGuard** (no "Nativa"; la
+- [x] (2026-11-13) En AdGuard → Protección DNS: verificar que **Implementación DNS = AdGuard** (no "Nativa"; la
       nativa no aplica filtros locales).
-- [ ] En AdGuard → Filtros DNS: **desactivar otras listas grandes** que hubiera (cada una suma al tope
+- [x] (2026-11-13) En AdGuard → Filtros DNS: **desactivar otras listas grandes** que hubiera (cada una suma al tope
       de 8 MiB y si se pasa, se pierden reglas en silencio). Dejar solo el filtro integrado y esta.
 - [ ] **VPN del servidor de medios**: desactivar su "VPN On Demand" y crear los Atajos (detalles en `private/CONTEXTO.md`):
   - [ ] Automatización "Al abrir la app de streaming del servidor → Conectar esa VPN".
@@ -19,6 +19,9 @@ Marca con `[x]` lo terminado y anota la fecha. Lo más urgente arriba.
         página web (URL del servidor) → Conectar VPN de AdGuard (al cerrar la página, AdGuard vuelve).
 - [ ] Otra app de VPN gratuita instalada: también desplaza a AdGuard y muestra anuncios propios;
       considerar desinstalarla.
+
+- [x] (2026-11-13) AdGuard → **Modo túnel = Túnel completo** (con dividido, iOS esquivaba el filtro por
+      la red celular). Si se reinstala AdGuard o se restablece la configuración, **volver a ponerlo**.
 
 ## Verificación
 

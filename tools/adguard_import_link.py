@@ -7,6 +7,7 @@ What it imports (AdGuard shows a confirmation screen with a checkbox per item):
   * DNS server 30 = "AdGuard DNS non-filtered (DNS-over-HTTPS)": filtering happens only locally, so
     our exceptions are authoritative (a filtering upstream would block before they can apply).
 Deliberately NOT included: dns_user_rules (the importer REPLACES all existing DNS user rules).
+Not importable, set by hand: Low-level settings -> Tunnel mode = Full tunnel (split tunnel leaks via cellular).
 """
 import json
 import urllib.parse

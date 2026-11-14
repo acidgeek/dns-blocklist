@@ -34,6 +34,18 @@ https://raw.githubusercontent.com/acidgeek/dns-blocklist/main/dist/adguard-dns.t
 
 Deja activado también el "AdGuard DNS filter" integrado.
 
+### Configuración obligatoria de AdGuard (si no, los anuncios se cuelan)
+
+| Ajuste | Valor | Por qué |
+|---|---|---|
+| Protección DNS → Implementación DNS | **AdGuard** | La "Nativa" no aplica filtros locales. |
+| Protección DNS → Servidor DNS | **AdGuard DNS Sin filtrado (DoH)** | Un servidor que filtra bloquea antes de que las excepciones de esta lista actúen. |
+| Configuración → General → Configuración avanzada → Opciones de bajo nivel → **Modo túnel** | **Túnel completo** | En "Túnel dividido", iOS reintenta por datos celulares cada conexión bloqueada y la resuelve con el DNS del operador: se medía hasta 22 dominios de anuncios por app colándose. Con túnel completo, 0. |
+| Protección DNS → Configuración de red | Filtrar datos móviles y Wi-Fi **activados** | Si no, AdGuard se desconecta en esa red. |
+| Filtros DNS | Solo el integrado y esta lista | Tope de 8 MiB para todos los filtros juntos. |
+
+El enlace de `tools/adguard_import_link.py` configura filtros y servidor; el modo túnel se cambia a mano.
+
 ## Si algo deja de funcionar
 
 1. En AdGuard → Actividad, busca la app y el dominio bloqueado.
