@@ -21,6 +21,12 @@ Marca con `[x]` lo terminado y anota la fecha. Lo más urgente arriba.
       sola VPN). Al terminar, volver a AdGuard (abrir AdGuard y tocar el interruptor, o Configuración → VPN →
       AdGuard). No usar la "integración" de AdGuard VPN: exige túnel dividido, que se puede eludir.
 - [ ] Opcional: mover el atajo del servidor a su carpeta y borrar la app web anterior (esa no cambia la VPN).
+- [ ] Observar la automatización "al cerrar la app de streaming": se dispara en cuanto la app deja la
+      pantalla (no hace falta cerrarla del todo; probado con el botón de inicio). **No probado:** imagen en
+      imagen, audio en segundo plano, transmitir a la TV y bloquear la pantalla con la app abierta. Si al
+      salir se corta la reproducción, quitar esa automatización y volver a AdGuard a mano.
+- [ ] Atajo del servidor: cerrar la página con la X para que vuelva AdGuard. Si se cambia de app con la
+      página abierta, el atajo se interrumpe y AdGuard queda apagado (recuperar: Configuración → VPN → AdGuard).
 
 - [x] (2026-11-13) AdGuard → **Modo túnel = Túnel completo** (con dividido, iOS esquivaba el filtro por
       la red celular). Si se reinstala AdGuard o se restablece la configuración, **volver a ponerlo**.
@@ -32,7 +38,8 @@ Marca con `[x]` lo terminado y anota la fecha. Lo más urgente arriba.
 - [x] (2026-11-13) **`pubads.g.doubleclick.net`**: se quitó de `allow.txt`.
 - [ ] Con AdGuard encendido, **reproducir un video** en la app de streaming con anuncios: si se atora,
       exceptuar `imasdk.googleapis.com` (lo bloquea HaGeZi Pro).
-- [ ] Volver a grabar con AdGuard **encendido** y confirmar: anuncios bloqueados, ninguna app rota.
+- [x] (2026-11-13) Volver a grabar con AdGuard **encendido** (túnel completo): 21 apps, 0 dominios de
+      anuncios contactados, ninguna app rota; repetido tras cambiar de VPN con los Atajos: 0 fugas.
 - [ ] Revisar AdGuard → Actividad unos días; cualquier bloqueo raro → `allow.txt`.
 
 ## Mejoras
