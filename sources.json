@@ -72,7 +72,8 @@
       "name": "Our exceptions",
       "path": "lists/allow.txt",
       "format": "allow-adblock",
-      "role": "allow"
+      "role": "allow",
+      "emit_always": true
     },
     {
       "name": "Pi-hole community whitelist (anudeepND)",

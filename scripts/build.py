@@ -205,6 +205,7 @@ def build(config: dict, texts: dict[str, str], psl: set[str], protect_hosts: lis
     weights = {}
     reference = set()  # domains already blocked by a filter the app keeps enabled (not repeated here)
     allow_wild, allow_exact = set(), set()
+    curated_wild, curated_exact = set(), set()  # local hand-reviewed allowlist ("emit_always")
     per_source = {}
     for src in config["sources"]:
         name = src["name"]
@@ -216,8 +217,13 @@ def build(config: dict, texts: dict[str, str], psl: set[str], protect_hosts: lis
         blocks = parsed.get("block", set())
         role = src.get("role", "block")
         if role == "allow":
-            allow_wild |= parsed.get("allow", set()) | (blocks if src["format"] == "domains" else set())
-            allow_exact |= parsed.get("allow_exact", set())
+            wild = parsed.get("allow", set()) | (blocks if src["format"] == "domains" else set())
+            exact = parsed.get("allow_exact", set())
+            allow_wild |= wild
+            allow_exact |= exact
+            if src.get("emit_always") and "path" in src:  # only local, reviewed files qualify
+                curated_wild |= wild
+                curated_exact |= exact
         elif role == "reference":
             reference |= blocks
         else:
@@ -276,18 +282,23 @@ def build(config: dict, texts: dict[str, str], psl: set[str], protect_hosts: lis
     def blocked_anywhere(h):
         return covered(h, blocked) or covered(h, reference)
 
-    # Emit EVERY exception, even when neither this list nor the reference blocks it today: the
-    # built-in filter differs per platform/version (AdGuard Android 4.15's built-in DNS filter blocks
-    # lptag.liveperson.net, the iOS one does not) and users may enable other lists. A few hundred
-    # exception rules cost almost nothing and keep app-critical hosts working everywhere.
-    exceptions_wild = sorted(compress(allow_wild))
-    exceptions_exact = sorted(a for a in allow_exact if not covered(a, allow_wild))
+    # Curated local exceptions (lists/allow.txt, "emit_always") are ALWAYS emitted: the built-in filter
+    # differs per platform/version (AdGuard Android 4.15's built-in DNS filter blocks lptag.liveperson.net,
+    # the iOS one does not) and users may enable other lists.
+    # Remote/community allowlists are only emitted when something here or in the reference actually
+    # blocks them, so a compromised upstream allowlist cannot unblock domains across all filters.
+    allowed_with_blocked_children = {x for r in reference for x in ancestors(r) if x in allow_wild}
+    remote_wild = {a for a in allow_wild - curated_wild if blocked_anywhere(a) or a in allowed_with_blocked_children}
+    exceptions_wild = sorted(compress(curated_wild | remote_wild))
+    wild_emitted = set(exceptions_wild)
+    remote_exact = {a for a in allow_exact - curated_exact if blocked_anywhere(a)}
+    exceptions_exact = sorted(a for a in curated_exact | remote_exact if not covered(a, wild_emitted))
 
     # 4) protected hosts must stay resolvable
     auto_unblocked = []
     exact_set = set(exceptions_exact)
     for h in protect_hosts:
-        if blocked_anywhere(h) and not covered(h, allow_wild) and h not in exact_set:
+        if blocked_anywhere(h) and not covered(h, wild_emitted) and h not in exact_set:
             exact_set.add(h)
             auto_unblocked.append(h)
     exceptions_exact = sorted(exact_set)

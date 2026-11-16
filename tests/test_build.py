@@ -65,9 +65,24 @@ class BuildTests(unittest.TestCase):
     def test_exceptions_always_emitted_for_other_platforms_filters(self):
         # nothing here blocks the chat host, but another platform's built-in filter might
         texts = {"A": "||ads.com^\n", "ALLOW": "@@||chatvendor.net^\n@@|api.bank.example^\n"}
-        r = self.run_build(texts, [src("A"), src("ALLOW", fmt="allow-adblock", role="allow")])
+        allow = src("ALLOW", fmt="allow-adblock", role="allow", emit_always=True, path="lists/allow.txt")
+        r = self.run_build(texts, [src("A"), allow])
         self.assertEqual(r["exceptions_wild"], ["chatvendor.net"])
         self.assertEqual(r["exceptions_exact"], ["api.bank.example"])
+
+    def test_remote_allowlist_only_emitted_when_needed(self):
+        # a remote/community allowlist must not unblock domains nobody here blocks (supply-chain safety)
+        texts = {"A": "||ads.com^\n||tracker.com^\n", "REMOTE": "doubleclick.net\ntracker.com\n"}
+        remote = src("REMOTE", fmt="allow-domains", role="allow", url="https://example.invalid/list.txt")
+        r = self.run_build(texts, [src("A"), remote])
+        self.assertEqual(r["exceptions_exact"], ["tracker.com"])
+        self.assertEqual(r["exceptions_wild"], [])
+
+    def test_emit_always_ignored_for_remote_sources(self):
+        texts = {"A": "||ads.com^\n", "REMOTE": "@@||doubleclick.net^\n"}
+        remote = src("REMOTE", fmt="allow-adblock", role="allow", emit_always=True, url="https://example.invalid/x")
+        r = self.run_build(texts, [src("A"), remote])
+        self.assertEqual(r["exceptions_wild"], [])
 
     def test_allowed_subtree_removed_from_blocklist(self):
         texts = {"A": "||cdn.chat.com^\n||chat.com^\n", "ALLOW": "@@||chat.com^\n"}
