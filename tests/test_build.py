@@ -62,6 +62,13 @@ class BuildTests(unittest.TestCase):
         r = self.run_build(texts, [src("REF", role="reference"), src("ALLOW", fmt="allow-adblock", role="allow")])
         self.assertEqual(r["exceptions_wild"], ["fraudcheck.click"])
 
+    def test_exceptions_always_emitted_for_other_platforms_filters(self):
+        # nothing here blocks the chat host, but another platform's built-in filter might
+        texts = {"A": "||ads.com^\n", "ALLOW": "@@||chatvendor.net^\n@@|api.bank.example^\n"}
+        r = self.run_build(texts, [src("A"), src("ALLOW", fmt="allow-adblock", role="allow")])
+        self.assertEqual(r["exceptions_wild"], ["chatvendor.net"])
+        self.assertEqual(r["exceptions_exact"], ["api.bank.example"])
+
     def test_allowed_subtree_removed_from_blocklist(self):
         texts = {"A": "||cdn.chat.com^\n||chat.com^\n", "ALLOW": "@@||chat.com^\n"}
         r = self.run_build(texts, [src("A"), src("ALLOW", fmt="allow-adblock", role="allow")])

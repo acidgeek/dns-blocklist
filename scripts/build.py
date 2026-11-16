@@ -276,11 +276,12 @@ def build(config: dict, texts: dict[str, str], psl: set[str], protect_hosts: lis
     def blocked_anywhere(h):
         return covered(h, blocked) or covered(h, reference)
 
-    # An allowed subtree also needs its exception when the reference filter blocks something
-    # *below* it (e.g. allow ravelin.click while the built-in filter blocks live.ravelin.click).
-    allowed_with_blocked_children = {x for r in reference for x in ancestors(r) if x in allow_wild}
-    exceptions_wild = sorted(a for a in allow_wild if blocked_anywhere(a) or a in allowed_with_blocked_children)
-    exceptions_exact = sorted(a for a in allow_exact if blocked_anywhere(a) and not covered(a, allow_wild))
+    # Emit EVERY exception, even when neither this list nor the reference blocks it today: the
+    # built-in filter differs per platform/version (AdGuard Android 4.15's built-in DNS filter blocks
+    # lptag.liveperson.net, the iOS one does not) and users may enable other lists. A few hundred
+    # exception rules cost almost nothing and keep app-critical hosts working everywhere.
+    exceptions_wild = sorted(compress(allow_wild))
+    exceptions_exact = sorted(a for a in allow_exact if not covered(a, allow_wild))
 
     # 4) protected hosts must stay resolvable
     auto_unblocked = []
