@@ -1,6 +1,6 @@
 {
   "rules_block": 251075,
-  "rules_exception": 502,
+  "rules_exception": 324,
   "core_domains": 158136,
   "reference_domains": 189428,
   "estimated_dnslibs_mib_with_reference": 6.72,
