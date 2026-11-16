@@ -105,3 +105,21 @@ app de farmacia que decía "sin conexión".
   otra VPN seleccionada y AdGuard apagado. Se recupera con Configuración → VPN → AdGuard.
 - Automatización de la UI: `universal-hid-service session` (un solo canal) en lugar de muchos `tap`
   sueltos; el primer toque tras una captura de pantalla a veces se pierde; las capturas llegan con retraso.
+
+## 2026-11-16 · Sesión 2: tablet Android
+
+- AdGuard ya estaba instalado (4.12.3) con licencia Premium, pero **no estaba corriendo** y el "DNS privado"
+  automático de Android se saltaba el filtro DNS. Se desactivó el DNS privado.
+- Se suscribió la lista (versión del 15-nov) y se puso el servidor "AdGuard DNS Non-filtered" (DoH).
+- Se dieron permisos de segundo plano y alarmas (Samsung), filtros cada 12 h, y se apagó la telemetría
+  propia de AdGuard. Se actualizó AdGuard a 4.15.2 con su actualizador.
+- **Hallazgo:** tras actualizar, el filtro DNS integrado de Android 4.15 bloqueaba el chat de una app
+  bancaria (`lptag.liveperson.net`). La excepción existía en `allow.txt`, pero el generador solo la
+  publicaba si el filtro de **iOS** la bloqueaba. Cambio: las excepciones curadas se publican siempre.
+- La revisión de seguridad automática señaló que publicar *todas* las excepciones incluiría las de listas
+  remotas (riesgo de cadena de suministro). Corrección: solo las curadas locales son incondicionales; las
+  remotas siguen condicionadas. 16 pruebas. Lista publicada: 251 075 bloqueos, 324 excepciones.
+- Verificado en la tablet: chat bancario, antifraude (ThreatMetrix, BioCatch) y API de farmacia pasan;
+  AdMob, AdSense, AppLovin y telemetría de Firebase bloqueados. Barrido de 12 apps (streaming, IPTV,
+  mensajería, navegador): todas cargan; una app de IPTV falla también con AdGuard en pausa (su servidor);
+  un error de una app de música fue pasajero (durante el reinicio de la VPN tras la actualización).

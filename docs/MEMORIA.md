@@ -49,6 +49,39 @@ Verificado en el iPhone el 2026-11-13:
 - Para VPN de uso ocasional sin automatización segura (cortaría la VPN al cambiar de app): volver a AdGuard
   a mano al terminar.
 
+## AdGuard para Android (verificado 2026-11-16 en una tablet con Android 16, AdGuard 4.15.2)
+
+- La versión completa (`com.adguard.android`) se instala desde adguard.com, no desde Play, y se
+  actualiza sola desde la app (Configuración → General → Actualizaciones de la app y filtros, o el botón ↻).
+  Android solo instala una actualización firmada con la misma clave.
+- **"DNS privado" de Android debe estar desactivado.** En modo "Automático", Android cifra el DNS hacia el
+  servidor que da el router (p. ej. Google) y **se salta el filtro DNS de AdGuard**; la app lo avisa en
+  Protección DNS. Por ADB: `settings put global private_dns_mode off`.
+- Suscribir la lista: Protección → Protección DNS → Filtros DNS → Agregar filtro DNS → URL. Servidor:
+  "AdGuard DNS Non-filtered" (DNS-over-HTTPS), por la misma razón que en iOS.
+- **El filtro DNS integrado de Android es distinto al de iOS y cambia con las versiones.** Con 4.15 bloquea
+  `lptag.liveperson.net` (chat de bancos), que el de iOS no bloquea. Por eso la lista publica **siempre** las
+  excepciones curadas de `lists/allow.txt` (ver "Excepciones" abajo).
+- En Samsung conviene exentar AdGuard del ahorro de batería y darle "alarmas y recordatorios"; si no, la
+  app advierte que las actualizaciones automáticas pueden fallar (y el sistema puede cerrarla). Por ADB:
+  `dumpsys deviceidle whitelist +com.adguard.android`, `appops set com.adguard.android RUN_ANY_IN_BACKGROUND allow`,
+  `appops set com.adguard.android SCHEDULE_EXACT_ALARM allow`.
+- AdGuard trae telemetría propia activada ("Informe automático de fallos", "Enviar datos técnicos y de
+  interacción" en Configuración → General); se pueden apagar sin afectar el bloqueo.
+- Diagnóstico: Estadísticas → Actividad reciente → detalle de la petición muestra **qué regla y qué filtro**
+  bloquearon. Para saber si una app falla por AdGuard: pausar la protección, reabrir la app y comparar.
+- Manejo por ADB: `uiautomator dump` da texto y posiciones exactas (más fiable que coordenadas a ojo);
+  `input text` escribe URLs sin problema. Ojo con demasiados "atrás": se sale a otras apps.
+
+## Excepciones: cuáles se publican
+
+- Las de `lists/allow.txt` (curadas a mano, `"emit_always": true` en `sources.json`) se publican **siempre**,
+  aunque hoy nada las bloquee: protegen contra filtros integrados de otras plataformas/versiones y listas
+  que el usuario active.
+- Las de fuentes remotas (whitelist comunitaria de Pi-hole, excepciones del filtro de AdGuard) solo se
+  publican si algo de esta lista o del filtro de referencia las bloquea: así una lista remota comprometida no
+  puede desbloquear dominios en todos los filtros. `emit_always` se ignora en fuentes remotas.
+
 ## Diseño de la lista
 
 - **Tier 0**: `lists/block-mobile-ads.txt` (SDKs de anuncios en apps, curada a mano).

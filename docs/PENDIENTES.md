@@ -31,6 +31,15 @@ Marca con `[x]` lo terminado y anota la fecha. Lo más urgente arriba.
 - [x] (2026-11-13) AdGuard → **Modo túnel = Túnel completo** (con dividido, iOS esquivaba el filtro por
       la red celular). Si se reinstala AdGuard o se restablece la configuración, **volver a ponerlo**.
 
+## Tablet Android
+
+- [x] (2026-11-16) AdGuard actualizado y configurado: DNS privado desactivado, lista suscrita, servidor
+      non-filtered, permisos de segundo plano, filtros cada 12 h, telemetría de AdGuard apagada.
+- [ ] Hay dos avisos de permisos de otras apps pendientes en la tablet (no se tocaron: decisión del dueño).
+- [ ] Si se reinstala AdGuard o se restablece Android: volver a desactivar el "DNS privado".
+- [ ] Opcional: agregar el filtro integrado de Android como segunda referencia en `sources.json` para no
+      repetir sus dominios (en Android el tope de memoria es menos estricto; hoy no hace falta).
+
 ## Verificación
 
 - [x] (2026-11-13) Pruebas manuales con captura: chat bancario, farmacia, servidor de medios,

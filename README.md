@@ -46,6 +46,14 @@ Deja activado también el "AdGuard DNS filter" integrado.
 
 El enlace de `tools/adguard_import_link.py` configura filtros y servidor; el modo túnel se cambia a mano.
 
+### AdGuard para Android
+
+1. Protección → Protección DNS → Filtros DNS → Agregar filtro DNS → la URL de arriba.
+2. Servidor DNS: **AdGuard DNS Non-filtered** (DNS-over-HTTPS).
+3. **Desactiva el "DNS privado" de Android** (Configuración → Conexiones → Más ajustes → DNS privado →
+   Desactivado). En "Automático" Android cifra el DNS por su cuenta y AdGuard no puede filtrarlo.
+4. En Samsung: quita a AdGuard del ahorro de batería para que no lo cierre el sistema.
+
 ## Si algo deja de funcionar
 
 1. En AdGuard → Actividad, busca la app y el dominio bloqueado.
