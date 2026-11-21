@@ -1,10 +1,10 @@
 {
-  "rules_block": 250806,
+  "rules_block": 250804,
   "rules_exception": 324,
-  "core_domains": 157962,
-  "reference_domains": 191013,
-  "estimated_dnslibs_mib_with_reference": 6.74,
-  "pihole_candidates": 322955,
+  "core_domains": 158540,
+  "reference_domains": 191347,
+  "estimated_dnslibs_mib_with_reference": 6.75,
+  "pihole_candidates": 322169,
   "cap": 260000,
   "cap_reached_at_votes": 1,
   "psl_dropped": [
@@ -117,7 +117,7 @@
     },
     "AdGuard DNS filter (built into the app, not repeated here)": {
       "status": "ok",
-      "block": 191013,
+      "block": 191347,
       "allow": 11
     },
     "AdGuard Mobile Ads filter": {
@@ -127,12 +127,12 @@
     },
     "HaGeZi Multi PRO": {
       "status": "ok",
-      "block": 243826,
+      "block": 244976,
       "allow": 0
     },
     "HaGeZi Apple native trackers": {
       "status": "ok",
-      "block": 104,
+      "block": 105,
       "allow": 0
     },
     "StevenBlack Unified (Pi-hole default)": {
@@ -142,7 +142,7 @@
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt": {
       "status": "ok",
-      "block": 51942,
+      "block": 51225,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts": {
@@ -222,7 +222,7 @@
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt": {
       "status": "ok",
-      "block": 11687,
+      "block": 11686,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://v.firebog.net/hosts/Prigent-Crypto.txt": {
@@ -237,7 +237,7 @@
     },
     "Firebog ticked (Pi-hole): https://phishing.army/download/phishing_army_blocklist_extended.txt": {
       "status": "ok",
-      "block": 146688,
+      "block": 146385,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt": {
@@ -260,7 +260,7 @@
     },
     "Firebog ticked (Pi-hole): https://lists.cyberhost.uk/malware.txt": {
       "status": "ok",
-      "block": 101405,
+      "block": 101511,
       "allow": 0
     },
     "Our exceptions": {
