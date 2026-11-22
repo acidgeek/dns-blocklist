@@ -1,10 +1,10 @@
 {
-  "rules_block": 250804,
+  "rules_block": 250831,
   "rules_exception": 324,
-  "core_domains": 158540,
-  "reference_domains": 191347,
+  "core_domains": 195160,
+  "reference_domains": 191442,
   "estimated_dnslibs_mib_with_reference": 6.75,
-  "pihole_candidates": 322169,
+  "pihole_candidates": 297268,
   "cap": 260000,
   "cap_reached_at_votes": 1,
   "psl_dropped": [
@@ -12,19 +12,13 @@
     "16-b.it",
     "32-b.it",
     "3utilities.com",
-    "4u.com",
     "64-b.it",
-    "abrdns.com",
     "at-band-camp.net",
     "biz.ua",
-    "bumbleshrimp.com",
     "camdvr.org",
-    "cc.cd",
     "ccwu.cc",
     "cf-ipfs.com",
     "cloudflare-ipfs.com",
-    "co.tz",
-    "com.cn",
     "cprapid.com",
     "dfirma.pl",
     "dkonto.pl",
@@ -100,12 +94,11 @@
     "soundcast.me",
     "tcp4.me",
     "theworkpc.com",
-    "tunk.org",
     "vpndns.net",
     "webhop.me",
     "workers.dev"
   ],
-  "psl_dropped_count": 96,
+  "psl_dropped_count": 89,
   "auto_unblocked_protected_hosts": [],
   "must_block_not_blocked": [],
   "protected_still_blocked": [],
@@ -117,7 +110,7 @@
     },
     "AdGuard DNS filter (built into the app, not repeated here)": {
       "status": "ok",
-      "block": 191347,
+      "block": 191442,
       "allow": 11
     },
     "AdGuard Mobile Ads filter": {
@@ -127,7 +120,7 @@
     },
     "HaGeZi Multi PRO": {
       "status": "ok",
-      "block": 244976,
+      "block": 281640,
       "allow": 0
     },
     "HaGeZi Apple native trackers": {
@@ -142,7 +135,7 @@
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt": {
       "status": "ok",
-      "block": 51225,
+      "block": 50644,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts": {
@@ -217,7 +210,7 @@
     },
     "Firebog ticked (Pi-hole): https://hostfiles.frogeye.fr/firstparty-trackers-hosts.txt": {
       "status": "ok",
-      "block": 15012,
+      "block": 15175,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareHosts.txt": {
@@ -237,7 +230,7 @@
     },
     "Firebog ticked (Pi-hole): https://phishing.army/download/phishing_army_blocklist_extended.txt": {
       "status": "ok",
-      "block": 146385,
+      "block": 146099,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt": {
@@ -260,7 +253,7 @@
     },
     "Firebog ticked (Pi-hole): https://lists.cyberhost.uk/malware.txt": {
       "status": "ok",
-      "block": 101511,
+      "block": 100703,
       "allow": 0
     },
     "Our exceptions": {
