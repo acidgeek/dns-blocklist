@@ -1,10 +1,10 @@
 {
-  "rules_block": 248438,
+  "rules_block": 248644,
   "rules_exception": 324,
-  "core_domains": 153163,
-  "reference_domains": 193186,
-  "estimated_dnslibs_mib_with_reference": 6.74,
-  "pihole_candidates": 331508,
+  "core_domains": 164630,
+  "reference_domains": 193543,
+  "estimated_dnslibs_mib_with_reference": 6.75,
+  "pihole_candidates": 322218,
   "cap": 260000,
   "cap_reached_at_votes": 1,
   "psl_dropped": [
@@ -13,10 +13,11 @@
     "32-b.it",
     "3utilities.com",
     "64-b.it",
+    "abrdns.com",
     "at-band-camp.net",
     "biz.ua",
-    "camdvr.org",
-    "ccwu.cc",
+    "bumbleshrimp.com",
+    "cc.cd",
     "cf-ipfs.com",
     "cloudflare-ipfs.com",
     "cprapid.com",
@@ -40,7 +41,6 @@
     "from-co.net",
     "from-ga.com",
     "from-hi.com",
-    "from-ia.com",
     "from-me.org",
     "from-mn.com",
     "from-mo.com",
@@ -52,7 +52,6 @@
     "from-wv.com",
     "groks-the.info",
     "hicam.net",
-    "iamallama.com",
     "is-a-chef.net",
     "is-a-conservative.com",
     "is-a-democrat.com",
@@ -69,11 +68,9 @@
     "ju.mp",
     "live-website.com",
     "mcdir.me",
-    "misconfused.org",
     "mochausercontent.com",
     "myiphost.com",
     "mypi.co",
-    "mysecuritycamera.org",
     "nflfan.org",
     "now-dns.net",
     "now-dns.org",
@@ -89,16 +86,14 @@
     "servebbs.net",
     "servebbs.org",
     "serveblog.net",
-    "serveftp.com",
     "servesarcasm.com",
     "soundcast.me",
     "tcp4.me",
-    "theworkpc.com",
     "vpndns.net",
     "webhop.me",
     "workers.dev"
   ],
-  "psl_dropped_count": 89,
+  "psl_dropped_count": 84,
   "auto_unblocked_protected_hosts": [],
   "must_block_not_blocked": [],
   "protected_still_blocked": [],
@@ -110,7 +105,7 @@
     },
     "AdGuard DNS filter (built into the app, not repeated here)": {
       "status": "ok",
-      "block": 193186,
+      "block": 193543,
       "allow": 11
     },
     "AdGuard Mobile Ads filter": {
@@ -120,7 +115,7 @@
     },
     "HaGeZi Multi PRO": {
       "status": "ok",
-      "block": 236199,
+      "block": 248326,
       "allow": 0
     },
     "HaGeZi Apple native trackers": {
@@ -130,12 +125,12 @@
     },
     "StevenBlack Unified (Pi-hole default)": {
       "status": "ok",
-      "block": 76103,
+      "block": 81675,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt": {
       "status": "ok",
-      "block": 50460,
+      "block": 51004,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts": {
@@ -230,7 +225,7 @@
     },
     "Firebog ticked (Pi-hole): https://phishing.army/download/phishing_army_blocklist_extended.txt": {
       "status": "ok",
-      "block": 146203,
+      "block": 146463,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt": {
@@ -253,7 +248,7 @@
     },
     "Firebog ticked (Pi-hole): https://lists.cyberhost.uk/malware.txt": {
       "status": "ok",
-      "block": 100941,
+      "block": 101131,
       "allow": 0
     },
     "Our exceptions": {
