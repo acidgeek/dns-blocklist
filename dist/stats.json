@@ -1,10 +1,10 @@
 {
-  "rules_block": 248644,
+  "rules_block": 248862,
   "rules_exception": 324,
-  "core_domains": 164630,
-  "reference_domains": 193543,
+  "core_domains": 162446,
+  "reference_domains": 193828,
   "estimated_dnslibs_mib_with_reference": 6.75,
-  "pihole_candidates": 322218,
+  "pihole_candidates": 324543,
   "cap": 260000,
   "cap_reached_at_votes": 1,
   "psl_dropped": [
@@ -105,7 +105,7 @@
     },
     "AdGuard DNS filter (built into the app, not repeated here)": {
       "status": "ok",
-      "block": 193543,
+      "block": 193828,
       "allow": 11
     },
     "AdGuard Mobile Ads filter": {
@@ -115,7 +115,7 @@
     },
     "HaGeZi Multi PRO": {
       "status": "ok",
-      "block": 248326,
+      "block": 246391,
       "allow": 0
     },
     "HaGeZi Apple native trackers": {
@@ -130,7 +130,7 @@
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt": {
       "status": "ok",
-      "block": 51004,
+      "block": 51375,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts": {
@@ -170,7 +170,7 @@
     },
     "Firebog ticked (Pi-hole): https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext": {
       "status": "ok",
-      "block": 3556,
+      "block": 3557,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts": {
@@ -225,7 +225,7 @@
     },
     "Firebog ticked (Pi-hole): https://phishing.army/download/phishing_army_blocklist_extended.txt": {
       "status": "ok",
-      "block": 146463,
+      "block": 146336,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt": {
@@ -248,7 +248,7 @@
     },
     "Firebog ticked (Pi-hole): https://lists.cyberhost.uk/malware.txt": {
       "status": "ok",
-      "block": 101131,
+      "block": 101296,
       "allow": 0
     },
     "Our exceptions": {
