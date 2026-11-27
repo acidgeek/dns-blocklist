@@ -1,10 +1,10 @@
 {
-  "rules_block": 249791,
+  "rules_block": 250276,
   "rules_exception": 324,
-  "core_domains": 152450,
-  "reference_domains": 194310,
-  "estimated_dnslibs_mib_with_reference": 6.78,
-  "pihole_candidates": 326862,
+  "core_domains": 153324,
+  "reference_domains": 194700,
+  "estimated_dnslibs_mib_with_reference": 6.79,
+  "pihole_candidates": 327663,
   "cap": 260000,
   "cap_reached_at_votes": 1,
   "psl_dropped": [
@@ -105,7 +105,7 @@
     },
     "AdGuard DNS filter (built into the app, not repeated here)": {
       "status": "ok",
-      "block": 194310,
+      "block": 194700,
       "allow": 11
     },
     "AdGuard Mobile Ads filter": {
@@ -115,7 +115,7 @@
     },
     "HaGeZi Multi PRO": {
       "status": "ok",
-      "block": 236709,
+      "block": 239289,
       "allow": 0
     },
     "HaGeZi Apple native trackers": {
@@ -130,7 +130,7 @@
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt": {
       "status": "ok",
-      "block": 51720,
+      "block": 51279,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/add.Spam/hosts": {
@@ -170,7 +170,7 @@
     },
     "Firebog ticked (Pi-hole): https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext": {
       "status": "ok",
-      "block": 3558,
+      "block": 3565,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://raw.githubusercontent.com/FadeMind/hosts.extras/master/UncheckyAds/hosts": {
@@ -225,7 +225,7 @@
     },
     "Firebog ticked (Pi-hole): https://phishing.army/download/phishing_army_blocklist_extended.txt": {
       "status": "ok",
-      "block": 146727,
+      "block": 146769,
       "allow": 0
     },
     "Firebog ticked (Pi-hole): https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt": {
@@ -248,7 +248,7 @@
     },
     "Firebog ticked (Pi-hole): https://lists.cyberhost.uk/malware.txt": {
       "status": "ok",
-      "block": 101540,
+      "block": 101740,
       "allow": 0
     },
     "Our exceptions": {
